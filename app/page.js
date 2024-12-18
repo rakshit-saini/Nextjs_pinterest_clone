@@ -34,23 +34,23 @@ export default function Home() {
             <ClipLoader color="#ef4444" size={120} />
           </div>
         ) : pins.length > 0 ? (
-          <div className="columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-4">
+          <div className="columns-2 md:columns-3 lg:columns-4 xl:columns-5 ">
             {pins.map((item) => {
               return (
                 <Link
                   href={`/pin/${item._id}`}
                   key={item._id}
-                  className="relative mb-7 group"
+                  className=" relative group"
                 >
                   <Image
                     src={item?.image?.url}
                     alt={item.title}
                     height={300}
                     width={300}
-                    className="w-full h-auto rounded-lg m-6 relative"
+                    className="w-full h-auto rounded-lg mb-4 "
                     priority
                   />
-                  {/* <span className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span> */}
+                  <span className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 </Link>
               );
             })}

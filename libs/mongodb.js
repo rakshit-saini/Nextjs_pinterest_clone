@@ -4,7 +4,7 @@ let isConnected = false; // Track the connection status
 
 const connectToDB = async () => {
   if (isConnected) {
-    console.log("Database is already connected");
+    console.log("db connnected")
     return;
   }
 
@@ -15,7 +15,7 @@ const connectToDB = async () => {
     });
 
     isConnected = connection.connections[0].readyState === 1;
-    console.log("Connected to database");
+    
   } catch (error) {
     console.error(`Error connecting to the database: ${error.message}`);
     throw new Error("Failed to connect to the database");

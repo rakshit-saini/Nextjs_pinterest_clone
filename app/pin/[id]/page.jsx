@@ -39,12 +39,10 @@ const Pin = () => {
 
   const handlePostComment = async () => {
     if (session && session?.user) {
-      console.log(session);
+     
       const profileImage = session?.user?.image;
       const user = session?.user?.name;
-      console.log("Comment", comment);
-      console.log("User", user);
-      console.log("Profile Image", profileImage);
+      
       if (!comment || !profileImage || !user) {
         toast.error("Please add a comment");
         return;
@@ -118,11 +116,10 @@ const Pin = () => {
                 <div className="flex justify-between items-center mb-6">
                   <Heart
                     onClick={handleLikePin}
-                    className={`${
-                      isLiked
+                    className={`${isLiked
                         ? "bg-red-500 text-white hover:bg-red-700"
                         : "bg-transparent hover:bg-red-500"
-                    } transition-all duration-300 w-10 h-10 p-2 rounded-full`}
+                      } transition-all duration-300 w-10 h-10 p-2 rounded-full`}
                   />
                   <div>
                     <Link
@@ -177,7 +174,7 @@ const Pin = () => {
               </div>
             </div>
             <h3 className="mt-10 text-2xl font-semibold">More to Explore</h3>
-            <div className="flex space-x-4 overflow-x-auto py-4">
+            <div className="flex flex-wrap justify-center gap-4 py-4">
               {morePins &&
                 morePins.map((element) => {
                   return (
@@ -187,13 +184,14 @@ const Pin = () => {
                         height={100}
                         src={element?.image?.url}
                         alt={"Pin"}
-                        className="w-32 h-32 object-cover rounded-lg shadow-md"
+                        className="w-full h-full object-cover rounded-lg shadow-md"
                         priority={true}
                       />
                     </Link>
                   );
                 })}
             </div>
+
           </div>
         </div>
       ) : (

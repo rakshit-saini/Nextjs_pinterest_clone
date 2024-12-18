@@ -60,9 +60,9 @@ const SignUp = () => {
       router.push("/signin");
     } catch (error) {
       toast.error("Registration failed, try again.");
-      console.log("Registration failed, try again." + error)
+     
       setLoading(false);
-      console.log(error);
+      
     }
   };
 

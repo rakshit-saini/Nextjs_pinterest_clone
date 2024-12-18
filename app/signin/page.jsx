@@ -22,7 +22,7 @@ const SignIn = () => {
   }, [session, router]);
 
   const handleCredentialsLogin = async () => {
-    console.log("CRENTIALS LOGIN");
+    
     setLoading(true);
     if (!username || !password) {
       toast.error("Please provide your credentials.");

@@ -14,7 +14,7 @@ export const GET = async (req, { params }) => {
     const pin = await Pin.findById(id);
 
     if (!pin) {
-      console.log("Pin not found");
+     
       return NextResponse.json(
         { success: false, message: "Pin not found" },
         { status: 404 }
